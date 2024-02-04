@@ -1,0 +1,60 @@
+{
+  "site": {
+    "title": "EMT - Efendić Metal Technology",
+    "base_url": "/",
+    "favicon": "/images/favicon.png",
+    "logo": "/images/emt-logo.svg",
+    "logo_white": "/images/emt-logo-white.svg",
+    "logo_width": "150",
+    "logo_height": "39",
+    "logo_text": "EMT"
+  },
+  "settings": {
+    "theme_switcher": true,
+    "default_theme": "system",
+    "pagination": 6,
+    "InnerPaginationOptions": {
+      "enableTop": false,
+      "enableBottom": true
+    },
+    "summary_length": 200,
+    "blog_folder": "posts"
+  },
+  "params": {
+    "tag_manager_id": "",
+    "footer_content": "Bosnia and Herzegovina , Bugojno - 70230",
+    "copyright": "Developed by [žone](https://www.linkedin.com/in/velic-benjamin-756548157/) & [zuda](https://www.linkedin.com/in/s0lution4ir3/)"
+  },
+  "metadata": {
+    "meta_author": "",
+    "meta_image": "",
+    "meta_description": "Efendic Metal Technology - CNC Machining"
+  },
+  "widgets": {
+    "about": {
+      "enable": true,
+      "content": "Lorem ipsum dolor sit amet, conse tfctetur adipiscing elit. Vel in in donec iaculis tempasus odio nunc laoreet . Libero ullam rgscorper."
+    },
+    "featured_posts": {
+      "enable": true,
+      "title": "Blog Categories",
+      "showPost": 3
+    },
+    "categories": {
+      "enable": true,
+      "title": "Blog Categories"
+    },
+    "newsletter": {
+      "enable": true,
+      "title": "Newsletter",
+      "content": "Join thousands of Tiny Salt subscribers and get our best recipes delivered each week!",
+      "privacy_policy_page": "#",
+      "malichipm_url": ""
+    }
+  },
+  "disqus": {
+    "enable": true,
+    "shortname": "themefisher-template",
+    "settings": {}
+  }
+}

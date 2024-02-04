@@ -1,7 +1,7 @@
 import { appWithTranslation } from "next-i18next";
 import config from "@config/config.json";
 import theme from "@config/theme.json";
-import { JsonContext } from "context/state";
+
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import { useEffect, useState } from "react";
@@ -38,7 +38,7 @@ const App = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <JsonContext>
+    <>
       <Head>
         {/* google font css */}
         <link
@@ -60,7 +60,7 @@ const App = ({ Component, pageProps }) => {
       <ThemeProvider attribute="class" defaultTheme={default_theme}>
         <Component {...pageProps} />
       </ThemeProvider>
-    </JsonContext>
+    </>
   );
 };
 

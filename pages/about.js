@@ -18,15 +18,15 @@ const About = () => {
               width={1298}
               height={616}
               alt={"About hero image"}
-              className="h-[350px] rounded-lg object-cover object-bottom"
+              className="h-[350px] rounded-lg object-cover object-bottom max-md:h-[250px]"
               priority={true}
             />
           </div>
 
           {markdownify(
             t("aboutUsTitle"),
-            "h1",
-            "h1 text-left lg:text-[55px] mt-12"
+            "h2",
+            "h2 text-left section-title mt-12"
           )}
 
           <div className="content text-left">

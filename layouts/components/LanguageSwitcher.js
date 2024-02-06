@@ -12,7 +12,10 @@ const LanguageSwitcher = () => {
   const router = useRouter();
   const changeLanguage = (newLocale) => {
     const { pathname, asPath, query } = router;
-    router.push({ pathname, query }, asPath, { locale: newLocale });
+    router.push({ pathname, query }, asPath, {
+      locale: newLocale,
+      scroll: false,
+    });
   };
   return (
     <div className="relative ml-1 mr-1 h-8 w-8 rounded p-1 sm:ml-4">
@@ -25,50 +28,64 @@ const LanguageSwitcher = () => {
         <IoLanguage className="h-[22px] w-[22px] select-none text-gray-900 dark:text-gray-100" />
       </div>
       {isOpen && (
-        <div className="fixed left-[50%] top-0 flex w-full max-w-[600px] translate-x-[-50%] translate-y-[110px] flex-col gap-[20px] rounded-[10px] bg-body p-[20px] shadow-2xl dark:bg-[#111] dark:shadow-[rgba(255,_255,_255,_0.6)]">
-          <div>{markdownify("Select language", "h6")}</div>
-          <div className="flex gap-[20px]">
-            <div
-              className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-[10px] rounded-full border shadow dark:border-darkmode-border"
-              onClick={() => changeLanguage("en")}
-            >
-              <ImageFallback
-                className="h-[50px] w-[50px] rounded-full object-cover"
-                src={FlagEn}
-                width={548}
-                height={443}
-                priority={true}
-                alt="Banner Image"
-              />
-            </div>
-            <div
-              onClick={() => changeLanguage("de")}
-              className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-[10px] rounded-full border shadow dark:border-darkmode-border"
-            >
-              <ImageFallback
-                className="h-[50px] w-[50px] rounded-full object-cover"
-                src={FlagDe}
-                width={548}
-                height={443}
-                priority={true}
-                alt="Banner Image"
-              />
-            </div>
-            <div
-              onClick={() => changeLanguage("ba")}
-              className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-[10px] rounded-full border shadow dark:border-darkmode-border"
-            >
-              <ImageFallback
-                className="h-[50px] w-[50px] rounded-full object-cover"
-                src={FlagBa}
-                width={548}
-                height={443}
-                priority={true}
-                alt="Banner Image"
-              />
+        <>
+          <div
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            className="fixed left-0 top-[112px] h-full w-full bg-body opacity-[0.8] dark:bg-[#111] max-lg:top-[107px]"
+          ></div>
+          <div className="fixed left-[50%] top-0 flex w-full max-w-[600px] translate-x-[-50%] translate-y-[110px] flex-col gap-[20px] rounded-[10px] bg-body p-[20px] shadow-2xl dark:bg-[#111] dark:shadow-[rgba(255,_255,_255,_0.6)]">
+            <div>{markdownify("Select language", "h6")}</div>
+            <div className="flex gap-[20px]">
+              <div
+                className="flex h-[50px] w-[50px] cursor-pointer select-none items-center justify-center gap-[10px] rounded-full border shadow dark:border-darkmode-border"
+                onClick={() => {
+                  changeLanguage("en");
+                }}
+              >
+                <ImageFallback
+                  className="h-[50px] w-[50px] rounded-full object-cover"
+                  src={FlagEn}
+                  width={548}
+                  height={443}
+                  priority={true}
+                  alt="Banner Image"
+                />
+              </div>
+              <div
+                onClick={() => {
+                  changeLanguage("de");
+                }}
+                className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-[10px] rounded-full border shadow dark:border-darkmode-border"
+              >
+                <ImageFallback
+                  className="h-[50px] w-[50px] rounded-full object-cover"
+                  src={FlagDe}
+                  width={548}
+                  height={443}
+                  priority={true}
+                  alt="Banner Image"
+                />
+              </div>
+              <div
+                onClick={() => {
+                  changeLanguage("ba");
+                }}
+                className="flex h-[50px] w-[50px] cursor-pointer items-center justify-center gap-[10px] rounded-full border shadow dark:border-darkmode-border"
+              >
+                <ImageFallback
+                  className="h-[50px] w-[50px] rounded-full object-cover"
+                  src={FlagBa}
+                  width={548}
+                  height={443}
+                  priority={true}
+                  alt="Banner Image"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

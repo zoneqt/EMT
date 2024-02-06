@@ -4,13 +4,15 @@ import { getListPage } from "@lib/contentParser";
 import { markdownify } from "@lib/utils/textConverter";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import products from "config/products.json";
 import DrillingImg from "public/images/drilling.jpg";
 import MillingImg from "public/images/milling.jpg";
 import TurningImg from "public/images/turning.jpg";
+import HomeImg1 from "public/images/emt-home-img1.webp";
+import HomeImg2 from "public/images/emt-home-img2.webp";
 
 const Home = ({ banner }) => {
   // define state
-
   const { t } = useTranslation("home");
   return (
     <Base>
@@ -50,9 +52,9 @@ const Home = ({ banner }) => {
               )} */}
             </div>
             {banner.image_enable && (
-              <div className="col-9 lg:col-6">
+              <div className="col-12 lg:col-6">
                 <ImageFallback
-                  className="mx-auto rounded-[10px] object-contain"
+                  className="mx-auto h-auto w-full rounded-[10px] object-contain"
                   src={banner.image}
                   width={548}
                   height={443}
@@ -69,29 +71,43 @@ const Home = ({ banner }) => {
       <section className="section">
         <div className="container">
           <div className="flex flex-col gap-[4rem]">
-            <div className="flex gap-[30px]  ">
-              <div className="col-6 ">
-                <div className="h-[340px] w-full max-w-[640px] rounded-[10px] bg-slate-300"></div>
+            <div className="flex gap-[30px] max-md:flex-col-reverse">
+              <div className="col-6 max-md:col-12">
+                <ImageFallback
+                  className="mx-auto h-auto w-full rounded-[10px] object-contain"
+                  src={HomeImg1}
+                  width={548}
+                  height={443}
+                  priority={true}
+                  alt="Home Image"
+                />
               </div>
-              <div className="col-6 ">
+              <div className="col-6 max-md:col-12">
                 {markdownify(t("ourStoryTitle"), "h2", "section-title")}
                 <p>{t("ourStoryContent")}</p>
               </div>
             </div>
-            <div className="flex gap-[30px] ">
-              <div className="col-6 ">
+            <div className="flex gap-[30px] max-md:flex-col">
+              <div className="col-6 max-md:col-12">
                 {markdownify(t("ourMissionTitle"), "h2", "section-title")}
                 <p>{t("ourMissionContent")}</p>
               </div>
-              <div className="col-6 ">
-                <div className="h-[340px] w-full max-w-[640px] rounded-[10px] bg-slate-300"></div>
+              <div className="col-6 max-md:col-12">
+                <ImageFallback
+                  className="mx-auto  h-auto w-full rounded-[10px] object-contain"
+                  src={HomeImg2}
+                  width={548}
+                  height={443}
+                  priority={true}
+                  alt="Home Image"
+                />
               </div>
             </div>
             <div>
               <h2 className="section-title mb-[60px] text-center">
                 {t("services")}
               </h2>
-              <div className="flex justify-around gap-[30px] ">
+              <div className="flex justify-around gap-[30px] max-md:flex-col max-md:items-center">
                 <div className="flex w-full max-w-[350px] flex-col items-center gap-[20px] rounded-[10px] px-[15px] py-[35px] shadow-[0_3px_20px_rgba(0,0,0,_.1)] dark:shadow-[0_3px_20px_rgba(255,255,255,_.1)]">
                   <ImageFallback
                     className="h-[200px] w-[200px] rounded-full object-cover"

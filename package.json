@@ -6,9 +6,10 @@
   "license": "UNLICENSED",
   "homepage": "http://emt.ba/",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
     "disqus-react": "^1.1.5",

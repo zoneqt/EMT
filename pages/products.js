@@ -30,8 +30,9 @@ const Products = () => {
           </h2>
 
           <div className="grid grid-cols-4 gap-[20px] max-md:grid-cols-2 max-sm:grid-cols-1">
-            {products.map((product) => (
+            {products.map((product, i) => (
               <ImageFallback
+                key={i}
                 className="rounded-[10px] object-cover shadow-[0_3px_20px_rgba(0,0,0,_.1)] dark:shadow-[0_3px_20px_rgba(255,255,255,_.1)]"
                 src={product.img}
                 width={500}
